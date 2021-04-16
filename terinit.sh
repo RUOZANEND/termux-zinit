@@ -26,6 +26,7 @@ terinit () {
     pkg i git subversion zsh fd fzf exa lua53 neofetch tar wget -y
     git clone https://github.com/rvvcim/terinit.git $HOME/.termux/terinit
     cp -r $HOME/.termux/terinit/termux/.* $HOME/.termux
+    :> $PREFIX/etc/motd
     zshconf
     termux-reload-settings
     zsh
