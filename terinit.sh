@@ -8,7 +8,7 @@ termirrors () {
 }
 
 zshconf () {
-    git clone https://github.com/zdharma/zinit.git ~/.zinit/bin --depth 1
+    git clone https://hub.fastgit.org/zdharma/zinit.git ~/.zinit/bin --depth 1
     cat $HOME/.termux/terinit/conf/zshrc.zsh > $HOME/.zshrc
     cat $HOME/.termux/terinit/conf/p10k.zsh > $HOME/.p10k.zsh
     if [ -e /data/data/com.termux/files/usr/bin/zsh ]; then
@@ -24,7 +24,7 @@ terinit () {
     termirrors
     termirrors
     pkg i git subversion zsh fd fzf exa lua53 neofetch tar wget -y
-    git clone https://github.com/rvvcim/terinit.git $HOME/.termux/terinit
+    git clone https://hub.fastgit.org/rvvcim/terinit.git $HOME/.termux/terinit
     cp -r $HOME/.termux/terinit/termux/.* $HOME/.termux
     :> $PREFIX/etc/motd
     zshconf
