@@ -1,4 +1,5 @@
-neofetch
+toilet --gay -f mono12 Termux
+#neofetch
 #sshd
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -20,7 +21,7 @@ zinit ice lucid wait='1'
 zinit light skywind3000/z.lua
 
 zinit light Aloxaf/fzf-tab
-zinit light paulirish/git-open
+# zinit light paulirish/git-open
 
 # 语法高亮
 zinit ice lucid wait atinit='zpcompinit'

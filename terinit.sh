@@ -23,7 +23,7 @@ zshconf () {
 terinit () {
     termirrors
     termirrors
-    pkg i git subversion zsh fd fzf exa lua53 neofetch tar wget -y
+    pkg i git subversion zsh fd fzf exa lua53 tar wget toilet -y
     git clone https://hub.fastgit.org/rvvcim/terinit.git $HOME/.termux/terinit
     cp -r $HOME/.termux/terinit/termux/.* $HOME/.termux
     :> $PREFIX/etc/motd
