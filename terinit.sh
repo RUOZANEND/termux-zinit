@@ -8,7 +8,7 @@ termirrors () {
 }
 
 zshconf () {
-    git clone https://github.com/zdharma/zinit.git ~/.zinit/bin --depth 1
+    git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin --depth 1
     cat $HOME/.termux/terinit/conf/zshrc.zsh > $HOME/.zshrc
     cat $HOME/.termux/terinit/conf/p10k.zsh > $HOME/.p10k.zsh
     if [ -e /data/data/com.termux/files/usr/bin/zsh ]; then
