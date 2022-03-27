@@ -5,11 +5,11 @@ Termux 初始化脚本，换源美化一条龙服务
 ## 使用方法
 
 ```bash
-. <(curl -fsSL https://cdn.jsdelivr.net/gh/rvvcim/terinit/terinit.sh)
+. <(curl -fsSL https://cdn.jsdelivr.net/gh/colsro/terinit/terinit.sh)
 ```
 ## 界面预览
 
-![Termux](https://cdn.jsdelivr.net/gh/rvvcim/terinit/img/terinit.jpg)
+![Termux](https://cdn.jsdelivr.net/gh/colsro/terinit/img/terinit.jpg)
 
 ## 相关项目
 
