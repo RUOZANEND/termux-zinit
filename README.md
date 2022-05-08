@@ -1,15 +1,15 @@
-# Terinit
+# Termux-zinit
 
 Termux 初始化脚本，换源美化一条龙服务
 
 ## 使用方法
 
 ```bash
-. <(curl -fsSL https://cdn.jsdelivr.net/gh/colsro/terinit/terinit.sh)
+. <(curl -fsSL https://cdn.jsdelivr.net/gh/colsro/termux-zinit/install.sh)
 ```
 ## 界面预览
 
-![Termux](https://cdn.jsdelivr.net/gh/colsro/terinit/img/terinit.jpg)
+![Termux](https://cdn.jsdelivr.net/gh/colsro/termux-zinit/img/terinit.jpg)
 
 ## 相关项目
 

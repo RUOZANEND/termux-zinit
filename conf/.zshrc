@@ -1,20 +1,24 @@
-toilet --gay -f mono12 Termux
-#neofetch
-#sshd
-
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y\n]
+# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    printf "Installing Zinit Plugin Manager (zdharma-continuum/zinit)…\n"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" --depth=1 && \
+        printf "Installation successful.\n" || \
+        printf "The clone has failed.\n"
+fi
 
-# source your own zsh file if exists
-#[ -f ~/.config/.zsh.sh ] && source ~/.config/.zsh.sh
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
-# 下面都是zinit配置
-source ~/.zinit/bin/zinit.zsh
-
-# 加载 powerlevel10k 主题
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # 快速目录跳转
 zinit ice lucid wait='1'
@@ -25,7 +29,7 @@ zinit light Aloxaf/fzf-tab
 
 # 语法高亮
 zinit ice lucid wait atinit='zpcompinit'
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 # 自动建议
 zinit ice lucid wait atload='_zsh_autosuggest_start'
@@ -49,13 +53,12 @@ zinit snippet OMZP::colored-man-pages
 
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
+# CNF
+# zinit snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
 
 # 解压缩
 zinit ice svn lucid wait='1' 
 zinit snippet OMZ::plugins/extract
-
-# 加载二进制程序
-zinit light zinit-zsh/z-a-bin-gem-node
 
 # 配置 fzf 使用 fd
 export FZF_DEFAULT_COMMAND='fd --type f'
@@ -69,9 +72,17 @@ alias ll='exa -lbgh'
 alias lsa='exa -lbahgR'
 alias lst='exa -lTabgh'
 
+# Load powerlevel10k theme
+zinit ice depth"1" # git clone depth
+zinit light romkatv/powerlevel10k
+
+# Load pure theme
+#zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+#zinit light sindresorhus/pure
+
+setopt no_nomatch
+
+export GPG_TTY=$(tty)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-
